@@ -1,0 +1,75 @@
+     notinfo: 雪树平台
+        excerpt: 通过安全前沿的技术开发互联网服务，提高综合生产力！
+        main_image_back: /assets/images/teamwork-gears-5193383_1280.png
+        excerpt2: ''
+        background-color: "#fafafa"
+        background_image:
+          src: /assets/images/gears-5193383_640.png
+        children:
+          - title: 迭代开发
+            excerpt: 我们正在一步一步的完善和追加新功能来丰富平台服务。
+          - title: 功能模块化
+            excerpt: 通过功能划分使各功能模块更加专业。
+          - title: 积分制
+            excerpt: 使用积分制来监督我们开发的项目过程与结果，这将影响参与任何项目的参与人员的信誉，主要是为了保证项目质量。
+
+
+           <!-- <li class="navigation__item">
+            <img id="avatarImage" alt="avatar" style="border-radius:50%;width: 36px;display: none;" />
+            <span id="loginUserInfo">
+            </span><a id="siginButton" href="javascript:void(0)" onclick="siginTop()">登录</a>
+          </li> -->
+
+
+
+
+
+          - title: 兴趣爱好
+      excerpt: 与有相同兴趣爱好的人一起探索感兴趣的事物，认识新的朋友！
+      background_color: "#FBBC09"
+      actions:
+        - text: 爱好交流
+          url_back: /samples.html
+          url: "#爱好交流"
+      image:
+        src: /assets/images/illustration-1736462.png
+        is_row: true
+        full_width: true
+        style: "max-width: 1200px;"
+    
+    - title: 房屋建筑需求
+      excerpt: 有建筑需求或者想设计一栋别墅却没有这方面的专业知识，我们提供可靠的专业的建筑相关方案和信息渠道。
+      theme_back: dark
+      background_color: "#FBBC09"
+      children:
+        - title: 创意设计
+          image:
+            src: /assets/images/architectural-design-works-3480187_1280.jpg
+            is_row: true
+            full_width: true
+            style: "max-width: 1200px;"
+        - title: 实现方案
+          image:
+            src: /assets/images/building-architect-3979490_1280.jpg
+            is_row: true
+            full_width: true
+            style: "max-width: 1200px;"
+        - title: 施工
+          image:
+            src: /assets/images/house-building-pexels-pixabay-534220.jpg
+            is_row: true
+            full_width: true
+            style: "max-width: 1200px;"
+    - title: 兼职或者工作
+      background_color: "#FBBC09"
+      actions:
+        - text: 填写工作意向
+          url: "#填写工作意向"
+          url_back: /samples.html
+      excerpt: 如果你需要找一份满意工作或者想招聘职员，这里也可以提供帮助
+      image:
+        showshadow: circle
+        src: /assets/images/resume-7244898_1280.png
+        is_row: true
+        full_width: true
+        style: "max-width: 1200px;"

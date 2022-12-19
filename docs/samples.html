@@ -1,0 +1,45 @@
+---
+layout: page
+title: Samples
+permalink: /read.html
+---
+
+
+<section class="my-5">
+  <a href="blog">
+    <h2 class="card__header">Blog</h2>
+  </a>
+</section>
+
+
+<div class="layout--articles">
+
+  <section class="my-5">
+    <header><h2 id="page-layout">游戏</h2></header>
+    {%- include article-games.html articles=site.posts type='grid' dtagType='Game' -%}
+  </section>
+  
+  <section class="my-5">
+    <header><h2 id="page-layout">探索</h2></header>
+    {%- include article-games.html articles=site.posts type='grid' dtagType='平台' -%}
+  </section>
+  <section class="my-5">
+    <header><h2 id="page-layout"></h2></header>
+    {%- include article-list.html articles=site.sample_page type='grid' -%}
+  </section>
+
+  <section class="my-5">
+    <header><h2 id="articles-layout">Games</h2></header>
+    {%- include article-list.html articles=site.sample_games type='grid' -%}
+  </section>
+
+  <section class="my-5">
+    <header><h2 id="articles-layout">游戏</h2></header>
+    {%- include article-list.html articles=site.sample_articles type='grid' -%}
+  </section>
+
+  <section class="my-5">
+    <header><h2 id="languages">技术</h2></header>
+    {%- include article-list.html articles=site.sample_languages type='grid' size='sm' -%}
+  </section>
+</div>

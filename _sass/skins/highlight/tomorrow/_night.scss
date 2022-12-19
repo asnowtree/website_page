@@ -1,0 +1,15 @@
+$dark: map-merge(
+  $dark,
+  (
+  highlight-font         :#f8f8f2,
+  highlight-foreground   :#ccc,
+  highlight-comment      :#999,
+  highlight-red          :#f92672,
+  highlight-orange       :#f99157,
+  highlight-yellow       :#fc6,
+  highlight-green        :#a6e22e,
+  highlight-aqua         :#6cc,
+  highlight-blue         :#69c,
+  highlight-purple       :#c9c,
+  )
+);

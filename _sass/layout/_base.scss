@@ -1,0 +1,39 @@
+.icon {
+  display: block;
+  > svg {
+    display: block;
+  }
+}
+
+@keyframes blinker {
+  50% {
+      opacity: 0;
+  }
+}
+
+#pringDiv::before {
+  content: ">";
+}
+
+.like{
+  color: red;
+}
+
+#pringDiv::after {
+  content: "_";
+  animation: blinker 1s none infinite;
+}
+
+.loginTable {
+  min-width: 20rem;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  position: fixed;
+  z-index: -1;
+}
+
+
+a .fa:hover {
+  color: #fc4d50;
+}

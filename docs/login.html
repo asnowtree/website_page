@@ -1,0 +1,13 @@
+---
+title: login
+show_title: false
+permalink: /login.html
+---
+<script>
+    window.onload = function(){
+        var url = document.referrer;
+        var o_length = window.location.origin.length;
+        url = url.substring(o_length);
+        window.location.href = window.location.origin +  "/user/login?from=" + url;
+    }
+</script>

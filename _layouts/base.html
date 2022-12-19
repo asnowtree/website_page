@@ -1,0 +1,32 @@
+---
+layout: none
+---
+<!DOCTYPE html>
+{%- include snippets/get-lang.html -%}
+<html lang="{{ __return }}">
+  <head>
+    
+    {%- include analytics.html -%}
+    {%- include head.html -%}
+    <script>
+      {%- include scripts/utils/utils.js -%}
+      {%- include scripts/lib/throttle.js -%}
+      {%- include scripts/lib/lazyload.js -%}
+    </script>
+    <script src="/assets/jquery.min.js"></script>
+    <!-- <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script> -->
+    {%- include scripts/variables.html -%}
+  </head>
+  <body>
+    <div class="root" data-is-touch="false">
+      {{ content }}
+    </div>
+
+    <script>
+      {%- include scripts/common.js -%}
+    </script>
+    <script>
+      {%- include scripts/base.js -%}
+    </script>
+  </body>
+</html>

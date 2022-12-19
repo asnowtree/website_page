@@ -1,0 +1,56 @@
+
+<footer class="footer py-4 js-page-footer">
+  <div class="main">
+    {%- assign _article_header_type = page.article_header.type | default: layout.article_header.type -%}
+    {%- assign _site_author = site.author -%}
+    {%- assign _is_index = page.isIndex | default: false -%}
+    {%- if _site_author.type == 'organization' -%}
+      {%- assign _site_author_itemtype = 'http://schema.org/Organization' -%}
+    {%- else -%}
+      {%- assign _site_author_itemtype = 'http://schema.org/Person' -%}
+    {%- endif -%}
+
+    <div itemscope itemtype="{{ _site_author_itemtype }}">
+      <meta itemprop="name" content="{{ _site_author.name }}">
+      {%- assign _site_author_url = _site_author.url | default: '/'-%}
+      {%- include snippets/get-nav-url.html path=_site_author_url -%}
+      {%- assign _site_author_url = __return -%}
+      <meta itemprop="url" content="{{ _site_author_url }}">
+      {%- if _site_author.bio -%}
+        <meta itemprop="description" content="{{ _site_author.bio }}">
+      {%- endif -%}
+      <div class="footer__author-links">
+        {%- include author-links.html author=_site_author -%}
+      </div>
+    </div>
+    {%- include snippets/get-locale-string.html key='COPYRIGHT_DATES' -%}
+    {%- assign _locale_copyright_dates = __return -%}
+    <div class="site-info mt-2">
+      <div>
+        {%- include snippets/get-locale-string.html key='COPYRIGHT_DATES' -%}
+        {%- assign _locale_copyright_dates = __return -%}
+        © {{ site.title }} {{ _locale_copyright_dates }},
+        Powered by <a title="Shanghai Snow Tree Technology Co., Ltd." href="/about.html">上海雪树科技有限公司</a>.
+        <a style="text-decoration:none"
+                  title="电子邮件" href="mailto:asnowtree@163.com" target="_blank">✉asnowtree@163.com</a></span>
+          &nbsp;
+          
+          {%-  if _is_index -%}
+          <a style="text-decoration:none;" href="https://beian.miit.gov.cn/"
+              target="_blank">沪ICP备2022020364号-1</a>
+              <div style="width:300px;margin:0 auto; 
+              /* padding:20px 0; */
+              ">
+                <a target="_blank"
+                    href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=33010902003335"
+                    style="display:inline-block;text-decoration:none;height:20px;line-height:20px;">
+                    <img src="beian.png" style="float:left;width: auto;">
+                    浙公网安备
+                    33010902003335号
+                </a>
+            </div>
+          {%- endif -%}
+      </div>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,104 @@
+---
+layout: article
+title: Issue
+show_title: false
+permalink: /issue.html
+article_header:
+  type: nooverlay
+---
+<div class="layout--articles">
+  <div id="issue_page" style="min-height: 500px;padding-top: 2rem;">
+    <div style="position: relative;">
+    <div style="z-index: 999;position: fixed;right: 2rem; top: 6rem; ">
+      <a class="button button--success button--pill" onclick="addIssue()" style="margin-right: 2rem;" href="javascript:void(0)">添加</a>
+          <a class="button button--outline-info button--pill" onclick="myissue()" style="margin-right: 2rem;"  href="javascript:void(0)">我的issue</a>
+          
+            <!-- <li class="home_tab" style=" background-color: cornflowerblue;"></li> -->
+            <!-- <li class="home_tab" onclick="()" style=" background-color: bisque;"></li> -->
+    </div>
+  </div>
+    <div id="issue_item_info" style="display: none;">
+        <article id="article-issue" style="padding: 10px;">
+
+        </article>
+        <div>
+            <button onclick="viewBack()">返回</button>
+        </div>
+    </div>
+    <div id="issue_list">
+        <div id="issue_list_data"></div>
+        
+        <div id="issue_list_pagination"></div>
+    </div>
+    <div id="issue_editor" style="display: none;"> 
+        <div>
+            <table>
+                <tr>
+                    <td>标题</td><td><input  name="title" type="text" placeholder="标题"></td>
+                    <td>作者</td><td><input name="author" type="text" placeholder="作者"></td>
+                    <!-- <td>标题</td><td><input name="title" type="text" placeholder="标题"></td> -->
+                </tr>
+            </table>
+        </div>
+        <div id="editor—wrapper">
+            <div id="toolbar-container"><!-- 工具栏 --></div>
+            <div id="editor-container"><!-- 编辑器 --></div>
+            <div>
+              <button onclick="save()">保存</button>
+              <button onclick="issueBack()">返回</button>
+            </div>
+        </div>
+        
+        <script src="https://unpkg.com/@wangeditor/editor@latest/dist/index.js"></script>
+        <!-- <script src="issue.js"></script> -->
+        <script>
+          {%- include scripts/issue.js -%}
+        </script>
+    </div>
+  </div>
+
+<style type="text/css">
+    .w-e-text-container {
+        background-color: inherit !important;
+    }
+    #editor-container {
+            min-height: 400px;
+            box-shadow: inset 2px 2px 4px #000,inset -2px -2px 4px #636363; 
+        }
+        .issueItem{
+            
+            /* box-shadow: inset 2px 2px 4px #000,inset -2px -2px 4px #636363; */
+            box-shadow: 5px 5px 4px #161718,-5px -5px 4px #404346;
+            padding: 1rem;
+            margin-bottom: 2rem;
+            
+            /* background-color: #fdf5e6; */
+        }
+        .issueDiv{
+            max-height: 500px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .issueDiv img {
+            width: auto;
+        }
+</style>
+<link href="https://unpkg.com/@wangeditor/editor@latest/dist/css/style.css" rel="stylesheet">
+
+  <script>
+    var clickIssued = 0;
+
+    function issues() {
+        if (clickIssued == 0) {
+            // clickIssued =  1;
+            issue_list();
+            // issueDisplay();
+            
+        }else{
+            document.getElementById('issue_list').style.display = 'block';
+            document.getElementById("issue_editor").style.display = 'none';
+        }
+    }
+    issues();
+</script>
+</div>
