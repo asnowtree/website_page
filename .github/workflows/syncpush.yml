@@ -11,7 +11,7 @@ jobs:
         with:
           # Name of the source branch (from)
           source-branch: coding
-          commit-message: "来自coding.net的同步"
+          commit-message: "来自coding.net的合并"
           # Name of the target branch (to)
           target-branch: master
           GITHUB_TOKEN: ${{ github.token }}
