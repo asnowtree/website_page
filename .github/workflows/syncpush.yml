@@ -1,0 +1,17 @@
+on:
+  push:
+    branches:
+      - coding
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Direct merge
+        uses: tukasz/direct-merge-action@v2.0.2
+        with:
+          # Name of the source branch (from)
+          source-branch: coding
+          commit-message: "来自coding.net的同步"
+          # Name of the target branch (to)
+          target-branch: master
+          GITHUB_TOKEN: ${{ github.token }}
