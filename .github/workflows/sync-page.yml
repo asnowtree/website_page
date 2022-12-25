@@ -18,6 +18,10 @@ jobs:
         key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile') }}
         restore-keys: |
           ${{ runner.os }}-gems-
-    - run: ls
-    - run: bundle install && bundle exec jekyll build --config .\docs\_config.yml
-    - run: ll _site
+#     - run: ls
+#     - run: bundle install && bundle exec jekyll build --config .\docs\_config.yml
+#     - run: ll _site
+    # Standard usage
+    - uses:  helaili/jekyll-action@v2
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
