@@ -182,7 +182,7 @@ yarn.lock
 package-lock.json
 
 # jekyll
-# Gemfile.lock
+Gemfile.lock
 package-lock.json
 _site/
 .sass-cache/
