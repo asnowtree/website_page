@@ -25,7 +25,7 @@ jobs:
           bundler-cache: true
       - name: Build site
         run: |
-          bundle exec jekyll build --config ./docs/_config.yml
+          bundle exec jekyll build --config ./docs/_config.yml --trace
           ls
         env:
           # For jekyll-github-metadata
