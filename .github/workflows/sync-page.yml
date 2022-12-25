@@ -7,7 +7,7 @@ on:
       - page
 
 env:
-  RUBY_VERSION: 3.1.2
+  RUBY_VERSION: 3.6
 
 jobs:
   deploy_docs:
