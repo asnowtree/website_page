@@ -18,7 +18,7 @@ jobs:
       BUNDLE_RETRY: 3
     steps:
       - uses: actions/checkout@v3
-      - run: ll
+      - run: ls
       - uses: ruby/setup-ruby@v1
         with:
           ruby-version: ${{ env.RUBY_VERSION }}
