@@ -25,7 +25,7 @@ jobs:
 #           bundler-cache: true 
       - name: Build site
         run: |
-          bundle install
+          bundle install --path vendor/bundle
           bundle exec jekyll build --config ./docs/_config.yml --trace
           ls
         env:
