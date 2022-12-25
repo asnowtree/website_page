@@ -23,6 +23,6 @@ jobs:
         with:
           ruby-version: ${{ env.RUBY_VERSION }}
       - name: install
-        run: bundle install path vendor/bundle
+        run: bundle install
       - name: build  
         run: bundle exec jekyll build --config ./docs/_config.yml --trace --incremental
