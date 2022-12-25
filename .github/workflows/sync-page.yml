@@ -24,10 +24,9 @@ jobs:
           ruby-version: ${{ env.RUBY_VERSION }}
           bundler-cache: true 
       - name: Build site
-        run: | 
-          gem install bundler
-          gem uninstall sassc
-          gem install sassc -- --disable-march-tune-native
+      - run:  gem uninstall sassc
+      - run:  gem install sassc -- --disable-march-tune-native
+      - run:  gem install bundler
       - run: bundle -v
       - run: ruby -v
       
