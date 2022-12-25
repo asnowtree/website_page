@@ -1,1 +1,23 @@
+name: Testing the GitHub Pages publication
 
+on:
+  push:
+    branches:
+      - page
+
+jobs:
+  jekyll:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+
+    # Use GitHub Actions' cache to shorten build times and decrease load on servers
+    - uses: actions/cache@v2
+      with:
+        path: vendor/bundle
+        key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile') }}
+        restore-keys: |
+          ${{ runner.os }}-gems-
+    - run: ls
+    - run: bundle exec jekyll  serve --config .\docs\_config.yml
+    - run: ll _site
