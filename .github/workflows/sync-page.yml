@@ -22,10 +22,9 @@ jobs:
       - uses: ruby/setup-ruby@v1
         with:
           ruby-version: ${{ env.RUBY_VERSION }}
-#           bundler-cache: true 
+          bundler-cache: true 
       - name: Build site
-        run: |
-           install bundler path vendor/bundle 
+        run: bundle config --local deployment true
       - run: bundle -v
       - run: ruby -v
       
