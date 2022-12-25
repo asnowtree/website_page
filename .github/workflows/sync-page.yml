@@ -7,12 +7,12 @@ on:
       - page
 
 env:
-  RUBY_VERSION: 3.1.2
+  RUBY_VERSION: 2.7.2
 
 jobs:
   deploy_docs:
     if: "!contains(github.event.commits[0].message, '[ci skip]')"
-    runs-on: 'windows-latest'
+    runs-on: 'macos-10.15'
     env:
       BUNDLE_PATH: "vendor/bundle"
       BUNDLE_JOBS: 4
@@ -23,7 +23,5 @@ jobs:
         with:
           ruby-version: ${{ env.RUBY_VERSION }}
           bundler-cache: true
-      - name: install
-        run: bundle install
       - name: build  
-        run: bundle exec jekyll build --config ./docs/_config.yml --trace --incremental
+        run: bundle exec jekyll build --config ./docs/_config.yml
