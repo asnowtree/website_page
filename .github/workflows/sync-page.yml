@@ -9,18 +9,6 @@ jobs:
   jekyll:
     runs-on: ubuntu-latest
     steps:
-
-
-#       - name: Deploy using FTP
-#         uses: sebastianpopp/ftp-action@releases/v2
-#         with:
-#           host: ${{ secrets.FTP_SERVER }}
-#           user: ${{ secrets.FTP_USERNAME }}
-#           password: ${{ secrets.FTP_PASSWORD }}
-#           localDir: "_site"
-#           remoteDir: "/public_html"
-#     - uses: actions/checkout@v2
-
     # Use GitHub Actions' cache to shorten build times and decrease load on servers
     - uses: actions/cache@v2
       with:
@@ -35,6 +23,6 @@ jobs:
     - uses:  helaili/jekyll-action@v2
       with:
         build_only: true
-        jekyll_build_options: --config ./docs/_config.yml
-        jekyll_src: './'
+#         jekyll_build_options: --config ./docs/_config.yml
+#         jekyll_src: './'
     - run: ls
