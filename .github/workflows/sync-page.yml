@@ -19,12 +19,10 @@ jobs:
       BUNDLE_RETRY: 3
     steps:
       - uses: actions/checkout@v3
-      - name: check
-        run: | 
-          gem install sassc -- --disable-march-tune-native
       - uses: ruby/setup-ruby@v1
         with:
           ruby-version: ${{ env.RUBY_VERSION }}
-          bundler-cache: true
-      - name: build
+      - name: install
+        run: bundle install path vendor/bundle
+      - name: build  
         run: bundle exec jekyll build --config ./docs/_config.yml --trace --incremental
