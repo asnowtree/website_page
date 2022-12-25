@@ -7,12 +7,12 @@ on:
       - page
 
 env:
-  RUBY_VERSION: 2.7.2
+  RUBY_VERSION: 3.2.0
 
 jobs:
   deploy_docs:
     if: "!contains(github.event.commits[0].message, '[ci skip]')"
-    runs-on: 'macos-10.15'
+    runs-on: 'macos-latest'
     env:
       BUNDLE_PATH: "vendor/bundle"
       BUNDLE_JOBS: 4
