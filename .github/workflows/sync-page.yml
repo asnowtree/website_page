@@ -24,7 +24,7 @@ jobs:
           ruby-version: ${{ env.RUBY_VERSION }}
           bundler-cache: true 
       - name: Build site
-        run: bundle config --local deployment true
+        run: gem install bundler
       - run: bundle -v
       - run: ruby -v
       
