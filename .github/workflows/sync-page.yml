@@ -25,7 +25,7 @@ jobs:
 #           bundler-cache: true 
       - name: Build site
         run: |
-          gem install bundler -v 3.0.0 --path vendor/bundle 
+           install bundler  -v 3.0.0 --path vendor/bundle 
 #          bundle _1.17.1_ install
       - run: bundle -v
       - run: ruby -v
