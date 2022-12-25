@@ -25,7 +25,7 @@ jobs:
 #           bundler-cache: true 
       - name: Build site
         run: |
-           install bundler --path vendor/bundle 
+           install bundler path vendor/bundle 
       - run: bundle -v
       - run: ruby -v
       
