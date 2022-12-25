@@ -26,4 +26,5 @@ jobs:
       with:
         build_only: true
         jekyll_build_options: --config ./docs/_config.yml
+        jekyll_src: './'
     - run: ls
