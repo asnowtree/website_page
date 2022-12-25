@@ -19,5 +19,5 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-gems-
     - run: ls
-    - run: bundle exec jekyll  serve --config .\docs\_config.yml
+    - run: exec jekyll  serve --config .\docs\_config.yml
     - run: ll _site
