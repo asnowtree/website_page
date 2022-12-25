@@ -6,7 +6,7 @@ on:
       - page
 
 env:
-  RUBY_VERSION: 2.7
+  RUBY_VERSION: 3.1.2
 
 jobs:
   deploy_docs:
@@ -25,7 +25,8 @@ jobs:
 #           bundler-cache: true 
       - name: Build site
         run: |
-          bundle install --path vendor/bundle
+          gem install bundler -v 3.0.0 --path vendor/bundle 
+#          bundle _1.17.1_ install
       - run: bundle -v
       - run: ruby -v
       
