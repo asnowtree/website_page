@@ -28,9 +28,8 @@ jobs:
       - run:  gem install sassc -- --disable-march-tune-native
       - run:  gem install bundler
       - run: bundle -v
-      - run: ruby -v
-      
       - run: |
+          ruby -v
           bundle exec jekyll build --config ./docs/_config.yml --trace
           ls
         env:
