@@ -12,7 +12,7 @@
 #    `--'   `----''--'   '--' `--'
 
 # config file for development,  DELETE IT IF YOU WANT.
-
+theme: jekyll-text-theme
 
 ## => Site Settings
 ##############################
