@@ -6,7 +6,7 @@ on:
       - page
 
 env:
-  RUBY_VERSION: 3.1.2
+  RUBY_VERSION: 2.7
 
 jobs:
   deploy_docs:
@@ -26,6 +26,10 @@ jobs:
       - name: Build site
         run: |
           bundle install --path vendor/bundle
+      - run: bundle -v
+      - run: ruby -v
+      
+      - run: |
           bundle exec jekyll build --config ./docs/_config.yml --trace
           ls
         env:
