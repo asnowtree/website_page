@@ -9,22 +9,44 @@ jobs:
   jekyll:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+      - name: Checkout
+        uses: actions/checkout@v2
 
-    # Use GitHub Actions' cache to shorten build times and decrease load on servers
-    - uses: actions/cache@v2
-      with:
-        path: vendor/bundle
-        key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile') }}
-        restore-keys: |
-          ${{ runner.os }}-gems-
+      - name: Build
+        uses: nielsdelestinne/jekyll-build@v1.0.0
+        with:
+          verbose: true
+
+      - name: Save Artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: my-website
+          path: _site
+
+#       - name: Deploy using FTP
+#         uses: sebastianpopp/ftp-action@releases/v2
+#         with:
+#           host: ${{ secrets.FTP_SERVER }}
+#           user: ${{ secrets.FTP_USERNAME }}
+#           password: ${{ secrets.FTP_PASSWORD }}
+#           localDir: "_site"
+#           remoteDir: "/public_html"
+#     - uses: actions/checkout@v2
+
+#     # Use GitHub Actions' cache to shorten build times and decrease load on servers
+#     - uses: actions/cache@v2
+#       with:
+#         path: vendor/bundle
+#         key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile') }}
+#         restore-keys: |
+#           ${{ runner.os }}-gems-
+# #     - run: ls
+# #     - run: bundle install && bundle exec jekyll build --config .\docs\_config.yml
+# #     - run: ll _site
+#     # Standard usage
+#     - uses:  helaili/jekyll-action@v2
+#       with:
+#         build_only: true
+#         jekyll_build_options: --config ./docs/_config.yml
+#         jekyll_src: './'
 #     - run: ls
-#     - run: bundle install && bundle exec jekyll build --config .\docs\_config.yml
-#     - run: ll _site
-    # Standard usage
-    - uses:  helaili/jekyll-action@v2
-      with:
-        build_only: true
-        jekyll_build_options: --config ./docs/_config.yml
-        jekyll_src: './'
-    - run: ls
