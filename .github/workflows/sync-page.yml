@@ -1,3 +1,4 @@
+name: Testing the GitHub Pages publication
 
 name: Build and deploy Jekyll documentation site
 
@@ -29,10 +30,3 @@ jobs:
       - name: copy file via ssh password
         uses: appleboy/scp-action@master
         with:
-          host: 106.14.156.10
-          username: scpwebsite
-          password: scppwd@2022!
-          port: 22
-          overwrite: true
-          source: "_site/*"
-          target: "/asnowtree/www/platform"
