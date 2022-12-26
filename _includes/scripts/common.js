@@ -22,14 +22,11 @@
   function toHistory (){
     window.location.href = window.location.origin + urlParams.from;
   }
-    
+
   if($(".athcor_li")){
     $(".athcor_li").bind("click touch",function(){
       $('html,body').animate({scrollTop: ($($(this).attr('href')).offset().top -50 )},500);
     });
   }
-  
+
 })();
-
-
-

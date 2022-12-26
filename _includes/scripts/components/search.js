@@ -103,32 +103,32 @@
     window.onresize = function () {
 
       h_With = window.innerWidth//浏览器窗口的内部宽度（包括滚动条）
-   
+
       || document.documentElement.clientWidth
-      
+
       || document.body.clientWidth;
-      
+
       h_Height = window.innerHeight//浏览器窗口的内部高度（包括滚动条）
-   
+
       || document.documentElement.clientWidth
-      
+
       || document.body.clientHeight;
-  
+
       // h_With = document.body.clientWidth
-       
+
       // || window.innerWidth//浏览器窗口的内部宽度（包括滚动条）会出现滚动条不优先考虑
-       
+
       // || document.documentElement.clientWidth;
-       
+
       // h_Height = document.body.clientHeight
-       
+
       // || window.innerHeight//浏览器窗口的内部高度（包括滚动条）
-       
+
       // || document.documentElement.clientWidth;
-  
-      
+
+
       // console.log(h_With, h_Height);
-     
+
       if(h_With > 687){
         if($navigationUl.style.display != 'flex'){
           $navigationUl.style.display = 'flex';
@@ -140,7 +140,7 @@
           $navigationUl.style.display = 'none';
         }
       }
-  
+
   }
   });
 })();

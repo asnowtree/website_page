@@ -4,8 +4,7 @@
   }
 
   img.border, .border > img {
-    border: 1px solid;
-    @include css-var(border-color, "var(--border-color-l)");
+    border: 1px solid $border-color-l;
   }
 
   img.rounded, .rounded > img {
@@ -15,9 +14,4 @@
   img.circle, .circle > img {
     border-radius: 50%;
   }
-}
-
-
-img.circle, .circle > img {
-  border-radius: 50%;
 }

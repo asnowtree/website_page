@@ -12,7 +12,7 @@
 #    `--'   `----''--'   '--' `--'
 
 # config file for development,  DELETE IT IF YOU WANT.
-theme: jekyll-text-theme
+
 
 ## => Site Settings
 ##############################
@@ -72,7 +72,6 @@ paths:
 ## => Post
 ##############################
 ## excerpt
-# excerpt_separator: "##"
 excerpt_separator: <!--more-->
 
 ## license
@@ -122,7 +121,7 @@ sharing:
 comments:
   provider: asnowtree # false (default), "disqus", "gitalk", "valine", "custom"
 
-  asnowtree: 
+  asnowtree:
     id: akey
   ## Disqus
   disqus:
