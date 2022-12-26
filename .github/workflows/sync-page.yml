@@ -34,4 +34,4 @@ jobs:
           password: scppwd@2022!
           port: 22
           source: "_site/*"
-          target: "/asnowtree/www/scpfile"
+          target: "/asnowtree/www/platform"
