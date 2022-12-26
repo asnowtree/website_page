@@ -21,7 +21,7 @@ html,
 
 .page__main {
   height: 100%;
-  @include css-var(color, "var(--text-color)");
+  color: $text-color;
   .col-aside {
     display: none;
     & > aside {
@@ -38,19 +38,18 @@ html,
   @include flexbox();
   @include flex-direction(column);
   min-height: 100%;
-  @include css-var(background-color, "var(--background-color)");
+  background-color: $background-color;
 }
 
 .page__content {
   @include flex(1);
   width: 100%;
   margin: 0 auto;
-  // margin-top: map-get($layout, header-height) !important;
   @media print {
     padding-bottom: 0;
   }
 
-  
+
 }
 
 .page__content_article {
@@ -62,7 +61,7 @@ html,
     padding-bottom: 0;
   }
 
-  
+
 }
 .hide-footer {
   .page__content {
@@ -95,7 +94,7 @@ html,
   width: 80%;
   max-width: map-get($layout, sidebar-width);
   height: 100%;
-  @include css-var(background-color, "var(--background-color)");
+  background-color: $background-color;
   @include split-line(right);
   @include transition(transform map-get($animation, duration));
   @include overflow(auto);
@@ -104,7 +103,7 @@ html,
   }
 }
 .sidebar-button {
-  @include clickable("text-color-d", "sidebar-button-background-color");
+  @include clickable($text-color-d, rgba($main-color-3, .75));
 }
 
 .page__mask {
@@ -162,12 +161,12 @@ html,
 
 .hero--light {
   .article__info {
-    @include css-var(color, "var(--text-color-theme-light)");
+    color: $text-color-theme-light;
   }
 }
 .hero--dark {
   .article__info {
-    @include css-var(color, "var(--text-color-theme-dark)");
+    color: $text-color-theme-dark;
   }
 }
 

@@ -1,21 +1,21 @@
 .article__content {
   code.success {
-    @include css-var(color, "var(--text-color-function)");
-    @include css-var(background-color, "var(--green-color)");
+    color: $text-color-function;
+    background-color: $green;
   }
 
   code.info {
-    @include css-var(color, "var(--text-color-function)");
-    @include css-var(background-color, "var(--blue-color)");
+    color: $text-color-function;
+    background-color: $blue;
   }
 
   code.warning {
-    @include css-var(color, "var(--text-color-function)");
-    @include css-var(background-color, "var(--yellow-color)");
+    color: $text-color-function;
+    background-color: $yellow;
   }
 
   code.error {
-    @include css-var(color, "var(--text-color-function)");
-    @include css-var(background-color, "var(--red-color)");
+    color: $text-color-function;
+    background-color: $red;
   }
 }

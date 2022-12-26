@@ -2,10 +2,10 @@
   &::before {
     display: block;
     font-size: map-get($base, font-size-h2);
-    @include css-var(color, "var(--text-color-l)");
+    color: $text-color-l;
     text-align: center;
     letter-spacing: map-get($spacers, 4);
-    // content: "...";
+    content: "...";
   }
 }
 

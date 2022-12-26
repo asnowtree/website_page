@@ -27,9 +27,9 @@ article_header:
     {%- else -%}
         style="background-image: url({{ _url }});">
     {%- endif -%}
-        
+
         <div class="hero__content">
-          
+
           {%- if _section.main_image -%}
           {%- include snippets/get-nav-url.html path=_section.main_image -%}
           {%- assign _url = __return -%}
@@ -127,7 +127,7 @@ article_header:
                               {%- else -%}
                               <img src="{{ _item_image_src }}" />
                               {%- endif -%}
-                              
+
                       {%- if _item_image_url -%}
                             </a>
                       {%- endif -%}

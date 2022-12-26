@@ -33,8 +33,6 @@
     };
   })();
 
-  //scripts/lib/jquery.min.js
-
   window.Lazyload.js(SOURCES.jquery, function() {
     var $tags = $('.js-tags');
     var $articleTags = $tags.find('button');

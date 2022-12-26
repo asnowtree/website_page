@@ -1,23 +1,32 @@
 name: Testing the GitHub Pages publication
 
+name: Build and deploy Jekyll documentation site
+
 on:
   push:
     branches:
       - page
 
-jobs:
-  jekyll:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v2
+env:
+  RUBY_VERSION: 2.7
 
-    # Use GitHub Actions' cache to shorten build times and decrease load on servers
-    - uses: actions/cache@v2
-      with:
-        path: vendor/bundle
-        key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile') }}
-        restore-keys: |
-          ${{ runner.os }}-gems-
-    - run: ls
-    - run: bundle exec jekyll  serve --config .\docs\_config.yml
-    - run: ll _site
+jobs:
+  deploy_docs:
+    if: "!contains(github.event.commits[0].message, '[ci skip]')"
+    runs-on: 'ubuntu-latest'
+    env:
+      BUNDLE_PATH: "vendor/bundle"
+      BUNDLE_JOBS: 4
+      BUNDLE_RETRY: 3
+    steps:
+      - uses: actions/checkout@v3
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: ${{ env.RUBY_VERSION }}
+          bundler-cache: true
+      - run: bundle -v
+      - name: build  
+        run: bundle exec jekyll build --config ./docs/_config.yml --trace
+      - name: copy file via ssh password
+        uses: appleboy/scp-action@master
+        with:
